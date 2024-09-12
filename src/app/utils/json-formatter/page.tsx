@@ -70,7 +70,7 @@ export default function Page() {
       <div className="flex flex-row justify-between items-center mb-2">
 
         <h1 className="font-bold">
-          Auto format JSON on blur 
+          Format JSON on blur 
         </h1>
 
         <div className="flex flex-row">

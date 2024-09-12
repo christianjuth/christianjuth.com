@@ -66,6 +66,11 @@ export default function Home() {
                 TypeScript Formatter
               </InternalLink>
             </li>
+            <li>
+              <InternalLink href="/utils/text-diff">
+                Text Diff
+              </InternalLink>
+            </li>
           </ul>
 
         </section>

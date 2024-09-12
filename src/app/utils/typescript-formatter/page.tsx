@@ -67,7 +67,7 @@ export default function Page() {
 
       <div className="flex flex-row space-x-2 items-center mb-2">
         <h1 className="font-bold flex-1">
-          Auto format TypeScript on blur 
+          Format TypeScript on blur 
         </h1>
 
         <div className="flex flex-row">
