@@ -57,12 +57,12 @@ export default function Home() {
 
           <ul className="list-disc list-inside">
             <li>
-              <InternalLink href="/tools/json-formatter">
+              <InternalLink href="/utils/json-formatter">
                 JSON Formatter
               </InternalLink>
             </li>
             <li>
-              <InternalLink href="/tools/typescript-formatter">
+              <InternalLink href="/utils/typescript-formatter">
                 TypeScript Formatter
               </InternalLink>
             </li>
