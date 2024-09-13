@@ -20,6 +20,8 @@ export default function Page() {
   const [file2, setFile2] = useState("test\nabcd");
   const [isFirstRender, setIsFirstRender] = useState(true);
 
+  const [mode, setMode] = useState<'chars' | 'lines' | 'words' | 'sentences'>('chars');
+
   useEffect(() => {
     if (isFirstRender) {
       setIsFirstRender(false);
@@ -28,9 +30,25 @@ export default function Page() {
 
   const isDark = theme === 'system' ? systemTheme === 'dark' : theme === 'dark';
 
+  let diffMethod: DiffMethod = DiffMethod.CHARS;
+  switch (mode) {
+    case 'chars':
+      diffMethod = DiffMethod.CHARS;
+      break;
+    case 'lines':
+      diffMethod = DiffMethod.LINES;
+      break;
+    case 'words':
+      diffMethod = DiffMethod.WORDS;
+      break;
+    case 'sentences':
+      diffMethod = DiffMethod.SENTENCES;
+      break;
+  }
+
   return (
     <div className="h-[100svh] font-mono flex flex-col">
-      <div className="p-4 space-y-4">
+      <div className="p-4 space-y-6">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -42,14 +60,26 @@ export default function Page() {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+              <BreadcrumbPage>Text Diff</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
 
-        <h1 className="font-bold">
-          Diff two files
-        </h1>
+        <div className="flex flex-row space-x-4 items-center justify-between max-w-lg">
+          <h1 className="font-bold">
+            Diff two files
+          </h1>
+
+          <div className="flex flex-row">
+            <label>Mode: </label>
+            <select value={mode} onChange={(e) => setMode(e.target.value as any)}>
+              <option value="chars">Chars</option>
+              <option value="lines">Lines</option>
+              <option value="words">Words</option>
+              <option value="sentences">Sentences</option>
+            </select>
+          </div>
+        </div>
       </div>
 
       <main className={cn("relative flex-1", isFirstRender && "opacity-0")}>
@@ -58,7 +88,7 @@ export default function Page() {
           newValue={file2}
           splitView={true}
           useDarkTheme={isDark}
-          compareMethod={DiffMethod.CHARS}
+          compareMethod={diffMethod}
           styles={{
             diffContainer: {
               width: '100%',
