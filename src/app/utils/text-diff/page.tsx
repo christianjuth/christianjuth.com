@@ -72,7 +72,7 @@ export default function Page() {
 
           <div className="flex flex-row">
             <label>Mode: </label>
-            <select value={mode} onChange={(e) => setMode(e.target.value as any)}>
+            <select value={mode} onChange={(e) => setMode(e.target.value as typeof mode)}>
               <option value="chars">Chars</option>
               <option value="lines">Lines</option>
               <option value="words">Words</option>
