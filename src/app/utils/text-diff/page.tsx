@@ -47,7 +47,7 @@ export default function Page() {
   }
 
   return (
-    <div className="h-[100svh] font-mono flex flex-col">
+    <div className="h-[100svh] flex flex-col">
       <div className="p-4 space-y-6">
         <Breadcrumb>
           <BreadcrumbList>
@@ -82,7 +82,7 @@ export default function Page() {
         </div>
       </div>
 
-      <main className={cn("relative flex-1", isFirstRender && "opacity-0")}>
+      <main className={cn("relative flex-1 font-mono", isFirstRender && "opacity-0")}>
         <ReactDiffViewer
           oldValue={file1}
           newValue={file2}
