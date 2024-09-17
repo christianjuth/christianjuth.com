@@ -45,12 +45,35 @@ export default function Home() {
 
           <ul className="list-disc list-inside">
             <li>
+              <ExternalLink href="https://vim.christianjuth.com">
+                Vim Emulator for the browser
+              </ExternalLink>
+            </li> 
+            <li>
               <ExternalLink href="https://blue.christianjuth.com">
                 BlueSky social media client written in Next.js
               </ExternalLink>
             </li> 
           </ul>
         </section>
+
+        <section>
+          <h2 className="font-bold text-lg">Articles</h2>
+
+          <ul className="list-disc list-inside">
+            <li>
+              <ExternalLink href="https://dev.to/creedbratton/the-principles-uiux-responsive-and-accessible-design-40hf">
+                The Principles UI/UX – Responsive and Accessible Design
+              </ExternalLink>
+            </li> 
+            <li>
+              <ExternalLink href="https://dev.to/creedbratton/turn-your-resume-into-an-interactive-cli-in-10-minutes-with-typescript-25fc">
+                Turn Your Resume Into an Interactive CLI in 10 minutes using TypeScript
+              </ExternalLink>
+            </li> 
+          </ul>
+        </section>
+
 
         <section>
           <h2 className="font-bold text-lg">Coding Utilities</h2>
